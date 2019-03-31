@@ -49,7 +49,7 @@ def compareTwoTeams(teamA, teamB):
 
 def findTeam(properties):
     result = EPL.find(
-        {properties},
+        properties,
         {"_id": 0, "AwayTeam": 1, "HomeTeam": 1}) \
         .sort("Date")
     return result
