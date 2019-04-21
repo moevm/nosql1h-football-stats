@@ -1,0 +1,180 @@
+.block-find-match
+{
+	height:100%;
+	width:100%;
+}
+.block-find-match>div
+{
+	float:left;
+	width:50%;
+	height:100%;
+	
+	display:flex;
+	align-items:center;
+	justify-content:center;
+}
+.block-find-match>div>div
+{
+
+	width:80%;
+}
+.block-background-selector
+{
+	background-color:#f7f7f76e;
+	padding:20px 10px;
+	border-radius:5%;
+}
+
+.block-find-match>div>div>.title
+{
+	padding:0 10px;
+}
+.block-find-match>div>div>.title>span
+{
+	color:#4394fd;
+	font-size:20px;
+}
+.block-find-match>div>div>.block-selector
+{
+	overflow:auto;
+	
+	padding:0 8px;
+}
+.block-find-match>div>div>.block-selector>input
+{
+	    border: 1px solid #e6e6e6;
+	margin:5px 0;
+	box-shadow:box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px;
+	
+	padding:10px;
+	
+}
+.block-find-match>div>div>.block-selector>.size-1
+{
+	width:100%;
+	float:left;	
+}
+.block-find-match>div>div>.block-selector>.size-2
+{
+	float:left;
+	width:calc(50% - 5px);
+}
+.block-find-match>div>div>.block-selector>.size-2:nth-child(2n + 1)
+{
+	margin-right:10px;
+}
+
+.block-find-match>div>div>.find
+{
+	width:100%;
+	height:50px;
+	
+	display:flex;
+	align-items:center;
+	justify-content:center;
+}
+.block-find-match>div>div>.find>button
+{
+	height:45px;
+	width:95%;
+	color:#4394fd;
+	font-size:20px;
+	background-color:#e6e5e5;
+	border:0;
+	    border-radius: 6%;
+    box-shadow: rgba(0,0,0,0.3) 0 1px 4px -1px;
+
+}
+
+
+
+.block-background-search
+{
+	background-color:#f7f7f76e;
+	padding:20px 10px;
+	border-radius:5%;
+	
+}
+
+.block-background-search>.back
+{
+	width:100%;
+	height:50px;
+	
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	position:relative;
+}
+.block-background-search>.back>a
+{
+	position:absolute;
+	
+	margin:auto;
+	left:0;
+	top:0;
+	height:100%;
+	width:100%;
+}
+.block-background-search>.back>button
+{
+	height:45px;
+	width:95%;
+	color:#4394fd;
+	font-size:20px;
+	background-color:#e6e5e5;
+	border:0;
+	    border-radius: 6%;
+    box-shadow: rgba(0,0,0,0.3) 0 1px 4px -1px;
+
+}
+.search
+{
+	height:600px;
+	overflow-y:scroll;
+}
+.search>div
+{
+	height:55px;
+	width:100%;
+}
+
+.search>div>div
+{
+	float:left;
+	
+	display:flex;
+	align-items:center;
+	border-bottom: 1px solid #e4e4e4;
+	
+	position:relative;
+}
+.search>div>div>a
+{
+	position:absolute;
+	margin:auto;
+	left:0;
+	right:0;
+	
+	height:100%;
+	width:100%;
+}
+.search>div>div>img
+{
+	height:24px;
+}
+.search>div>div:nth-child(2n)
+{
+	width:6%;
+	height:100%;
+	justify-content:center;
+}
+.search>div>div:nth-child(2n+1)
+{
+	width:47%;
+	height:100%;
+}
+.search>div>div:nth-child(1)
+{
+	justify-content:flex-end;
+}
