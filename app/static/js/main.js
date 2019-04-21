@@ -31,10 +31,6 @@ $(document).ready(function(){
 			type: 'POST',
 			data:{
 				
-			}
-			beforeSend: function()
-			{
-				
 			},
 			success : function(ans){
 			

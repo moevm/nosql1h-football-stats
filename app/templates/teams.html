@@ -6,12 +6,14 @@
 			<span>Football Teams</span>
 		</div>
 		<div class = "block-teams">
+			
 			<div>
+				{% for team in teams %}
 				<div>
-					<span>Send</span>
-					<a href = "#"></a>
+					<span>{{ team }}</span>
+					<a href = "/{{ teams }}/"></a>
 				</div>
-				
+				{% endfor %}
 			</div>
 		</div>
 	
