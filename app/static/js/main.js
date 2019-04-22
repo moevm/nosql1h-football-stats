@@ -48,7 +48,7 @@ $(document).ready(function(){
 	
 	
 	$("#export").on("click",function(){
-		
+		window.location.href = '/export/';
 	});
 	
 	

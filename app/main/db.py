@@ -61,3 +61,6 @@ def findTeam(properties):
         {"_id": 0, "AwayTeam": 1, "HomeTeam": 1}) \
         .sort("Date")
     return result
+def getAll():
+	result = EPL.find()
+	return result

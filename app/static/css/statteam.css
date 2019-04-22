@@ -1,0 +1,40 @@
+.block-team-stat
+{
+	height:100%;
+	float:left;
+	width:50%;
+	
+	display:flex;
+	align-items:center;
+	justify-content:center;
+}
+.block-team-stat>div
+{
+	width:80%;
+	height:80%;
+	background-color: #f7f7f76e;
+}
+.block-team-stat>div>div
+{
+	float:left;
+	width:50%;
+	height:100%;
+	box-sizing:border-box;
+	padding:0px 5px;
+}
+.block-team-stat>div>div>p
+{
+	padding:15px 10px;
+	color:gray;
+	font-size:17px;
+	font-weight:600;
+}
+.block-team-stat>div>div>input
+{
+	width:100%;
+
+	    border: 1px solid #e6e6e6;
+    margin: 5px 0px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px;
+    padding: 10px;
+}
