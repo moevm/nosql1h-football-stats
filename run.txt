@@ -1,0 +1,6 @@
+1. virtualenv venv
+2. venv/Scripts/activate (windows)
+2. source venv/Scripts/activate (mac/ubuntu)
+3. pip install flask
+4. export FLASK_APP=microblog.py   ���  (setFLASK_APP=microblog.py)
+5. flask run
