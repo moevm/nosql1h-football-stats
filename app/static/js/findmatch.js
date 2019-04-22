@@ -87,6 +87,8 @@ $(document).ready(function(){
                 data: JSON.stringify(a),
                 dataType: "json",
                 success: function (ans) {
+					$(".search").empty();
+					
                     ans.forEach(function(match){
 						console.log(match.HomeTeam + ' ' + match.AwayTeam);
 						$(".search").append(getblock(match.HomeTeam,match.AwayTeam));
