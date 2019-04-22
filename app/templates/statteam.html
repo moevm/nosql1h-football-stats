@@ -23,7 +23,7 @@
 				</div>
 				<div class = "right-menu">
 					<p>Team's statisctic</p>
-					{% for stat in stats %}
+
 					<input type = "text" readonly placeholder = "{{ stat.Matches }}">
 					<input type = "text" readonly placeholder = "-1">
 					<input type = "text" readonly placeholder = "-1">
@@ -36,7 +36,6 @@
 					<input type = "text" readonly placeholder = "{{ stat.HC + stat.AC }}">
 					<input type = "text" readonly placeholder = "{{ stat.HY + stat.AY }}">
 					<input type = "text" readonly placeholder = "{{ stat.HR + stat.AR }}">
-					{% endfor %}
 				</div>
 				
 

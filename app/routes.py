@@ -32,3 +32,15 @@ def show_stat_team(teamname):
 	result = (db.getTeamDetails(teamname))
 	print(result);
 	return render_template('statteam.html',teamname = teamname, stats = result)
+	
+@app.route('/compare/f=<name_1>&s=<name_2>')
+def compare(name_1,name_2):
+	name_1 = name_1
+	name_2 = name_2
+	first_t = list(db.getTeamDetails(name_1)) 
+	first_t = first_t[0]
+	
+	second_t = list(db.getTeamDetails(name_2)) 
+	second_t = second_t[0]
+
+	return render_template('compare.html',team1 = first_t,name_1 = name_1,name_2 = name_2, team2 = second_t)
