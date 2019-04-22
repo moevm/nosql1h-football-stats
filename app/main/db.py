@@ -51,7 +51,8 @@ def findAllTeams():
 	return result
 def findMatchs(properties):
 	match = EPL.find(
-		{"Date":"2010-08-14"}
+		properties
+		
 	)
 
 	return match

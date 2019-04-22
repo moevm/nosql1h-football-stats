@@ -20,7 +20,9 @@ def find_match():
 def show_match():
 	post_data = request.json
 	result = dumps(db.findMatchs(post_data))
-	print(result)
+	print("this is date: ",post_data)
+	
+	print("this is result: ",result)
 	return result
 	
 @app.route('/export/')
