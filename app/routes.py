@@ -27,7 +27,7 @@ def show_match():
 def export_json():
 	result=dumps(db.getAll())
 	return result
-@app.route('/statteam/<teamname>')
+@app.route('/statteam/<teamname>/')
 def show_stat_team(teamname):
 	result = (db.getTeamDetails(teamname))
 	print(result);

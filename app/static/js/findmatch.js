@@ -9,7 +9,7 @@ function getblock(HomeTeam, AwayTeam)
 {
 	return `<div>
 				<div>
-					<a href = "#"></a>
+					<a href = "/statteam/${HomeTeam}"></a>
 					<span>${HomeTeam}</span>
 				</div>
 				<div>
@@ -17,7 +17,7 @@ function getblock(HomeTeam, AwayTeam)
 					<img src = "static/img/ico/versus.svg">
 				</div>
 				<div>
-					<a href = "#"></a>
+					<a href = "/statteam/${AwayTeam}"></a>
 					<span>${AwayTeam}</span>
 				</div>
 			</div>`;
