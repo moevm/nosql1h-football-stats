@@ -29,9 +29,9 @@ def export_json():
 	return result
 @app.route('/statteam/<teamname>/')
 def show_stat_team(teamname):
-	result = (db.getTeamDetails(teamname))
-	print(result);
-	return render_template('statteam.html',teamname = teamname, stats = result)
+	result = list(db.getTeamDetails(teamname))
+	result = result[0]
+	return render_template('statteam.html',teamname = teamname, stat = result)
 	
 @app.route('/compare/f=<name_1>&s=<name_2>')
 def compare(name_1,name_2):

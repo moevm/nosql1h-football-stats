@@ -5,7 +5,6 @@ client = MongoClient()
 db = client['NoSQL']
 EPL = db["match"]
 
-
 def getTeamDetails(teamName):
     result = EPL.aggregate([
         {"$match": {"$or": [{"AwayTeam": teamName}, {"HomeTeam": teamName}]}},
@@ -47,33 +46,24 @@ def compareTwoTeams(teamA, teamB):
         .sort("Date")
     return result
 
-
 def findAllTeams():
-    result = EPL.distinct("AwayTeam")
-    return result
-
-
+	result = EPL.distinct("AwayTeam");
+	return result
 def findMatchs(properties):
-    match = EPL.find(
-        {"Date": "2010-08-14"}
-    )
+	match = EPL.find(
+		{"Date":"2010-08-14"}
+	)
 
-    return match
-
-
+	return match
 def findTeam(properties):
     result = EPL.find(
         properties,
         {"_id": 0, "AwayTeam": 1, "HomeTeam": 1}) \
         .sort("Date")
     return result
-
-
 def getAll():
-    result = EPL.find()
-    return result
-
-
+	result = EPL.find()
+	return result
 def getTeamResult(teamName):
     result = EPL.aggregate([
         {"$match": {"$or": [{"AwayTeam": teamName}, {"HomeTeam": teamName}]}},
