@@ -33,6 +33,23 @@
 					</div>
 				</div>
 			</div>
+			
+			<div class = "block-model" id = "model-stat-team">
+				<div class = "animated fadeInDown">
+					<div class = "model-title">
+						<span>Import json</span>
+					</div>
+					<div class = "model-main">
+						<input type = "text" placeholder = "Team name" id = "team-name-stat">
+					</div>
+					<div class = "model-navigation">
+						
+						<button class = "close">close</button>
+						<button class = "send">ok</button>
+					</div>
+				</div>
+			</div>
+			
 			<div class = "block-import-export">
 				<div class = "block-import">
 					<div id = "import" class = "button">
@@ -69,7 +86,7 @@
 					<div>
 						<img src = "{{ url_for('static', filename = 'img/ico/statistics.svg')}}">
 						<span>Statistics team</span>
-						<a href = "#"></a>
+						<a href = "#" id = "stat-team-main"></a>
 					</div>
 					<div>
 						<img src = "{{ url_for('static', filename = 'img/ico/population.svg')}}">

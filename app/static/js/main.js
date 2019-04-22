@@ -20,6 +20,7 @@ class Model
 $(document).ready(function(){
 	var ImportBlock = new Model("#model-import");
 	var CompareBlock = new Model("#model-compare");
+	var StatTeamBlock = new Model("#model-stat-team");
 	
 	$(".block-model .close").on("click",function(){
 		ImportBlock.fadeOut();
@@ -74,6 +75,27 @@ $(document).ready(function(){
 		}
 		
 	});
+	
+	$("#stat-team-main").on("click",function()
+	{
+		StatTeamBlock.fadeIn();
+	})
+	$("#model-stat-team .send").on("click",function(){
+		
+
+		var teamname = $("#team-name-stat").val();
+		
+		teamname = teamname.trim();
+
+		
+		
+		if (teamname != "" )
+		{
+			window.location.href = "/statteam/" + teamname;
+		}
+		
+	});
+	
 	
 	
 })
