@@ -11,14 +11,15 @@ class Model
 		$(this.id).fadeIn(1000);
 	}
 	fadeOut(){
-		$(this.id + ">div").addClass("fadeOutUp");
-		$(this.id).fadeOut(1000);
+		$(".block-model>div").addClass("fadeOutUp");
+		$(".block-model").fadeOut(1000);
 	}
 }
 
 
 $(document).ready(function(){
 	var ImportBlock = new Model("#model-import");
+	var CompareBlock = new Model("#model-compare");
 	
 	$(".block-model .close").on("click",function(){
 		ImportBlock.fadeOut();
@@ -52,6 +53,27 @@ $(document).ready(function(){
 	});
 	
 	
+	$("#compare-main").on("click",function()
+	{
+		CompareBlock.fadeIn();
+	})
+	$("#model-compare .send").on("click",function(){
+		
+		console.log("1");
+		
+		var team1 = $("#team1").val();
+		var team2 = $("#team2").val();
+		
+		team1 = team1.trim();
+		team2 = team2.trim();
+		
+		
+		if (team1 != "" && team2 != "" )
+		{
+			window.location.href = "/compare/f="+team1+"&s=" + team2;
+		}
+		
+	});
 	
 	
 })

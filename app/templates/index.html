@@ -17,7 +17,22 @@
 					</div>
 				</div>
 			</div>
-		
+			<div class = "block-model" id = "model-compare">
+				<div class = "animated fadeInDown">
+					<div class = "model-title">
+						<span>Import json</span>
+					</div>
+					<div class = "model-main">
+						<input type = "text" placeholder = "Insert Link" id = "team1">
+						<input type = "text" placeholder = "Insert Link" id = "team2">
+					</div>
+					<div class = "model-navigation">
+						
+						<button class = "close">close</button>
+						<button class = "send">ok</button>
+					</div>
+				</div>
+			</div>
 			<div class = "block-import-export">
 				<div class = "block-import">
 					<div id = "import" class = "button">
@@ -49,7 +64,7 @@
 					<div>
 						<img src = "{{ url_for('static', filename = 'img/ico/vs.svg')}}">
 						<span>Compare 2 teams</span>
-						<a href = "#"></a>
+						<a href = "#" id = "compare-main"></a>
 					</div>
 					<div>
 						<img src = "{{ url_for('static', filename = 'img/ico/statistics.svg')}}">
