@@ -67,10 +67,10 @@ def compare(name_1,name_2):
 	
 	
 	
-	statis2 = list(db.getTeamDetails(name_1)) 
+	statis2 = list(db.getTeamDetails(name_2)) 
 	statis2 = statis2[0]
 	
-	matres2 = list(db.getTeamResult(name_1))
+	matres2 = list(db.getTeamResult(name_2))
 	matres2 = matres2[0]
 	
 	result2 = merge_two_dicts(statis2,matres2)
