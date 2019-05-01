@@ -99,6 +99,5 @@ def getTeamResult(teamName):
 
 def numOfMeets(teamA, teamB):
     result = EPL.find(
-    {"$and": [{"AwayTeam": teamA}, {"HomeTeam": teamB}]},
-    {"_id": 0}).count()
+    {"$and": [{"AwayTeam": teamA}, {"HomeTeam": teamB}]}).count()
     return result
