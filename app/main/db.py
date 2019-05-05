@@ -101,3 +101,16 @@ def numOfMeets(teamA, teamB):
     result = EPL.find(
     {"$and": [{"AwayTeam": teamA}, {"HomeTeam": teamB}]}).count()
     return result
+
+def getNumOfMatches():
+    result = EPL.aggregate([
+        {"$group": {
+                "_id": {
+                "HomeTeam": "$HomeTeam",
+                "AwayTeam": "$AwayTeam"
+                },
+                "Matches": {"$sum": 1}
+            }
+        }
+    ])
+    return result
