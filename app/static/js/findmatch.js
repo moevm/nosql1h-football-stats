@@ -5,7 +5,7 @@ function clean(obj) {
     }
   }
 }
-function getblock(HomeTeam, AwayTeam)
+function getblock(HomeTeam, AwayTeam,date)
 {
 	return `<div>
 				<div>
@@ -20,6 +20,7 @@ function getblock(HomeTeam, AwayTeam)
 					<a href = "/statteam/${AwayTeam}"></a>
 					<span>${AwayTeam}</span>
 				</div>
+				<div>${date}</div>
 			</div>`;
 }
 $(document).ready(function(){
@@ -91,7 +92,7 @@ $(document).ready(function(){
 					
                     ans.forEach(function(match){
 						console.log(match.HomeTeam + ' ' + match.AwayTeam);
-						$(".search").append(getblock(match.HomeTeam,match.AwayTeam));
+						$(".search").append(getblock(match.HomeTeam,match.AwayTeam,match.Date));
 					})
                 },
                 error: function (ans) {

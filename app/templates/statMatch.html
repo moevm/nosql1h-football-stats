@@ -1,0 +1,72 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+
+	<div class = "block-compare">
+		<div>
+			<div>team1s</div>
+			<input placeholder = "{{ name_1 }}" readonly></input>
+			<input placeholder = "{{ name_2 }}" readonly></input>
+			
+
+			
+			<div>Losses</div>
+			<input placeholder = "{{ team1.Loss}}" readonly></input>
+			<input placeholder = "{{ team2.Loss}}" readonly></input>
+			
+			<div>Goal for:</div>
+			<input placeholder = "{{ team1.FTHG + team1.FTAG }}" readonly></input>
+			<input placeholder = "{{ team2.FTHG + team2.FTAG }}" readonly></input>
+
+			
+			<div>Goal against</div>
+			<input placeholder = "{{ team1.HTHG + team1.HTAG }}" readonly></input>
+			<input placeholder = "{{ team2.HTHG + team2.HTAG }}" readonly></input>
+
+			
+			<div>Shots</div>
+			<input placeholder = "{{ team1.HS + team1.AS }}" readonly></input>
+			<input placeholder = "{{ team2.HS + team2.AS }}" readonly></input>
+
+			
+			<div>Shots on Target</div>
+			<input placeholder = "{{ team1.HST + team1.AST }}" readonly></input>
+			<input placeholder = "{{ team2.HST + team2.AST }}" readonly></input>
+
+			
+			<div>Fouls</div>
+			<input placeholder = "{{ team1.AF + team1.HF }}" readonly></input>
+			<input placeholder = "{{ team2.AF + team2.HF }}" readonly></input>
+
+			
+			<div>Corners</div>
+			<input placeholder = "{{ team1.HC + team1.AC }}" readonly></input>
+			<input placeholder = "{{ team2.HC + team2.AC }}" readonly></input>
+
+			
+			<div>Yellow Cards</div>
+			<input placeholder = "{{ team1.HY + team1.AY }}" readonly></input>
+			<input placeholder = "{{ team2.HY + team2.AY }}" readonly></input>
+
+			
+			<div>Red Cards</div>
+			<input placeholder = "{{ team1.HR + team1.AR }}" readonly></input>
+			<input placeholder = "{{ team2.HR + team2.AR }}" readonly></input>
+
+		</div>
+	</div>
+	<div class = "block-canvas-c">
+		<script>
+			var name1= "{{ name_1 }}";
+			var name2= "{{ name_2 }}";
+			
+		
+			var Team1Arr = [{{team1.FTHG + team1.FTAG}},{{team1.HTHG + team1.HTAG}},{{team1.HS + team1.AS}},{{team1.HST + team1.AST}},{{team1.AF + team1.HF}},{{team1.HC + team1.AC}},{{team1.HY + team1.AY}},{{team1.HR + team1.AR}}];
+			var Team2Arr = [{{team2.FTHG + team2.FTAG}},{{team2.HTHG + team2.HTAG}},{{team2.HS + team2.AS}},{{team2.HST + team2.AST}},{{team2.AF + team2.HF}},{{team2.HC + team2.AC}},{{team2.HY + team2.AY}},{{team2.HR + team2.AR}}];
+			var Label = ["Goal for","Goal against","Shots","Shots on Target","Fouls","Corners","Yellow Cards","Red Cards"];
+		</script>
+	
+		<canvas id = "myChart" height = "500" width = "500">
+	</div>
+{% endblock %}
