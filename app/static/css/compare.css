@@ -32,3 +32,21 @@
 	height:40px;
 	margin:5px;
 }
+
+
+.block-canvas-c
+{
+	    width: 60vh;
+    height: 30vh;
+    float: left;
+}
+
+#myChart
+{
+	    background-color: #f7f7f76e;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px;
+    display: block;
+    width: 581px;
+    height: 581px;
+    margin: 100px;
+}

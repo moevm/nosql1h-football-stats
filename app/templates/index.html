@@ -8,7 +8,8 @@
 						<span>Import json</span>
 					</div>
 					<div class = "model-main">
-						<input type = "" placeholder = "Insert Link" id = "linkImport">
+						
+						<input type = "file" id = "linkImport">
 					</div>
 					<div class = "model-navigation">
 						
@@ -62,6 +63,10 @@
 					<div id = "export" class = "button">
 						<img src = "{{ url_for('static', filename = 'img/ico/export.svg')}}">
 						<span>export</span>
+						<a id="download_link"  href="" download="full.json"></a>
+						
+						
+						
 					</div>
 				</div>
 			</div>
@@ -92,6 +97,11 @@
 						<img src = "{{ url_for('static', filename = 'img/ico/population.svg')}}">
 						<span>teams</span>
 						<a href = "/teams"></a>
+					</div>
+					<div>
+						<img src = "{{ url_for('static', filename = 'img/ico/table.svg')}}">
+						<span>tableMatch</span>
+						<a href = "/tableMatch"></a>
 					</div>
 				</div>
 			</div>

@@ -13,7 +13,7 @@ function getblock(HomeTeam, AwayTeam)
 					<span>${HomeTeam}</span>
 				</div>
 				<div>
-					<a href = "#"></a>
+					<a href = "/compare/f=${HomeTeam}&s=${AwayTeam}"></a>
 					<img src = "static/img/ico/versus.svg">
 				</div>
 				<div>

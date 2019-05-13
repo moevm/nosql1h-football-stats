@@ -18,6 +18,14 @@ class Model
 
 
 $(document).ready(function(){
+	
+	function readFile(file, callback){
+		var reader = new FileReader();
+		reader.onload = callback
+		reader.readAsText(file);
+	}
+	
+	
 	var ImportBlock = new Model("#model-import");
 	var CompareBlock = new Model("#model-compare");
 	var StatTeamBlock = new Model("#model-stat-team");
@@ -25,19 +33,29 @@ $(document).ready(function(){
 	$(".block-model .close").on("click",function(){
 		ImportBlock.fadeOut();
 	});
-	$("#model-import .send").on("click",function(){
+	$("#model-import .send").on("click",function(e){
 		
-		HrefFile = $("#linkImport").text();
-		$.ajax({
-			url: 'php/upload.php',
-			type: 'POST',
-			data:{
-				
-			},
-			success : function(ans){
-			
-			},
-		})
+		var selectedFile = $('#linkImport')[0].files[0];
+		var tt;
+		readFile(selectedFile, function(e) {
+            
+            tt = (e.target.result);
+			$.ajax({
+				url: '/import/',
+				type: 'POST',
+				contentType: 'application/json',
+				data: JSON.stringify({
+					 'json': tt
+				}),
+				dataType: "json",
+				success : function(ans){
+					console.log("-----------");
+					console.log(ans);
+					
+				},
+			})
+        });
+		
 		
 		
 		
@@ -45,12 +63,32 @@ $(document).ready(function(){
 	});
 	$("#import").on("click",function(){
 		ImportBlock.fadeIn();
+		
+		
+		
 	});
 	
+
+	var datab;
+	$.ajax({
+			url: '/export/',
+			type: 'POST',
+			success : function(ans){
+				datab =" "+ ans + " ";
+				console.log("done")
+				
+			},
+		})
 	
-	
+	$("#download_link").on("click",function(){
+		//datab = "Hello"
+		//$("#download_link").href = "data:text/plain;charset=UTF-8,"  + encodeURIComponent(datab);
+		    this.href = "data:text/plain;charset=UTF-8,"  + encodeURIComponent(datab);
+	});
 	$("#export").on("click",function(){
-		window.location.href = '/export/';
+		
+		
+		
 	});
 	
 	
