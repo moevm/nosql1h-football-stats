@@ -25,6 +25,14 @@ def find_match():
 @app.route('/findmatch/find/', methods=['POST'])
 def show_match():
 	post_data = request.json
+	
+
+	for key in post_data:
+		try:
+			post_data[key] = int(post_data[key])
+		except ValueError:
+			post_data[key] = post_data[key]
+	
 	print(type(post_data))
 	result = dumps(db.findMatchs(post_data))
 	print("this is date: ",post_data)
@@ -96,7 +104,11 @@ def compare(name_1,name_2):
 	
 
 	return render_template('compare.html',team1 = result1,name_1 = name_1,name_2 = name_2, team2 = result2)
-@app.route('/test/')
+@app.route('/statMatch/num=<num1>')
+def stat(num1):
+	num = num1
+	
+	
 
 	
 @app.route('/tableMatch/')

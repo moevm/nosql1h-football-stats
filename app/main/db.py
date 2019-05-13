@@ -46,6 +46,8 @@ def compareTwoTeams(teamA, teamB):
         .sort("Date")
     return result
 
+	
+	
 def findAllTeams():
 	result = EPL.distinct("AwayTeam");
 	return result
