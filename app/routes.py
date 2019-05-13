@@ -2,7 +2,7 @@ from app import app
 from flask import render_template, session, request, redirect, url_for, abort, current_app, flash, jsonify, json
 from app.main import db
 from bson.json_util import dumps
-
+import ast
 
 def merge_two_dicts(x, y):
     z = x.copy()   # start with x keys and values
@@ -25,16 +25,29 @@ def find_match():
 @app.route('/findmatch/find/', methods=['POST'])
 def show_match():
 	post_data = request.json
+	print(type(post_data))
 	result = dumps(db.findMatchs(post_data))
 	print("this is date: ",post_data)
 	
 	print("this is result: ",result)
 	return result
 	
-@app.route('/export/')
+@app.route('/export/', methods=['POST'])
 def export_json():
 	result=dumps(db.getAll())
 	return result
+	
+	
+	
+@app.route('/import/', methods=['POST'])
+def import_json():
+	post_data = request.json
+	x = (ast.literal_eval(post_data['json']))
+	print(x)
+	db.insertArr(x)
+	return "1"
+	
+	
 @app.route('/statteam/<teamname>/')
 def show_stat_team(teamname):
 	
@@ -84,12 +97,12 @@ def compare(name_1,name_2):
 
 	return render_template('compare.html',team1 = result1,name_1 = name_1,name_2 = name_2, team2 = result2)
 @app.route('/test/')
-def test():
-	second_t = list(db.getTeamDetails("Arsenal")) 
-	second_t = second_t[0]
-	result = list(db.getTeamResult("Arsenal"))
-	result = result[0]
+
 	
-	test = merge_two_dicts(second_t,result)
-	print(test)
-	return "1"
+@app.route('/tableMatch/')
+def  tableMatch():
+	teams = (list(db.findAllTeams()))
+	res = (list(db.getNumOfMatches()))
+	print(res)
+	
+	return render_template('tableMatch.html',teams = teams,res = res)
