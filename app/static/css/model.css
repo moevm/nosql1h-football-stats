@@ -49,6 +49,24 @@
 	box-sizing: border-box;
 	
 }
+.block-model>div>.model-main>button
+{
+	height:35px;
+	width:calc(100% - 30px);
+	padding:10px;
+	margin:10px 0 15px 15px;
+	border-radius:10px;
+	
+	border:1px solid #e6e6e6;
+	outline:none;
+	transition:.5s;
+	box-sizing: border-box;
+	
+	background-color:#82b3ff;
+	color:white;
+	
+}
+
 .block-model>div>.model-main>input:hover
 {
 	border:2px solid #90b5f9;
