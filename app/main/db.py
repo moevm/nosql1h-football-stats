@@ -46,8 +46,6 @@ def compareTwoTeams(teamA, teamB):
         .sort("Date")
     return result
 
-	
-	
 def findAllTeams():
 	result = EPL.distinct("AwayTeam");
 	return result
@@ -62,7 +60,7 @@ def findMatchs(properties):
     print(properties)
     result = EPL.find(
         properties,
-        {"_id": 0, "AwayTeam": 1, "HomeTeam": 1}) \
+        {"_id": 0, "AwayTeam": 1, "HomeTeam": 1,"Date":1}) \
         .sort("Date")
     return result	
 
@@ -95,12 +93,40 @@ def numOfMeets(teamA, teamB):
     {"$and": [{"AwayTeam": teamA}, {"HomeTeam": teamB}]}).count()
     return result
 
-def getNumOfMatches():
-    result = EPL.aggregate([
-        {"$group": {
+def test(teams):
+	result = EPL.aggregate([
+	{ 
+		"$match":{
+			"HomeTeam":{"$in":  teams},
+			"AwayTeam":{"$in":  teams}
+		}
+	},
+	{
+		"$group": {
                 "_id": {
                 "HomeTeam": "$HomeTeam",
                 "AwayTeam": "$AwayTeam"
+				},
+                "Matches": {"$sum": 1}
+            }
+        }
+	])
+	return result
+def test1():
+	result = EPL.find(
+	{
+	"$match":{
+		"HomeTeam":{"$in":  ["Arsenal","Hull"]},
+		"AwayTeam":{"$in":  ["Arsenal","Hull"]}
+	}
+	})
+	return result
+def getNumOfMatches(teams):
+    result = EPL.aggregate([
+        {"$group": {
+                "_id": {
+                "HomeTeam": {"$in": [ "$HomeTeam", ["Arsenal","Hull"]]},
+                "AwayTeam": {"$in": [ "$AwayTeam", ["Arsenal","Hull"]]}
                 },
                 "Matches": {"$sum": 1}
             }
@@ -121,3 +147,14 @@ def tye():
 def insertArr(arr):
 	x = EPL.insert_many(arr)
 	print(x.inserted_ids)
+	
+	
+def Matchdetails(teamA,teamB,date):
+	result = EPL.find(
+		{
+			"$and": [{"HomeTeam" : teamA},{"AwayTeam" : teamB}],
+			"Date":date
+		},
+		{"_id":0})
+		
+	return result
