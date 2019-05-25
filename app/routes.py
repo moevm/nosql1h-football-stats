@@ -3,6 +3,7 @@ from flask import render_template, session, request, redirect, url_for, abort, c
 from app.main import db
 from bson.json_util import dumps
 import ast
+import numpy as np
 
 def merge_two_dicts(x, y):
     z = x.copy()   # start with x keys and values
@@ -104,19 +105,28 @@ def compare(name_1,name_2):
 	
 
 	return render_template('compare.html',team1 = result1,name_1 = name_1,name_2 = name_2, team2 = result2)
-@app.route('/statMatch/date=<date1>&n=<n1>&f=<n2>')
+@app.route('/statMatch/date=<date>&n=<n>&f=<f>')
 def stat(date,n,f):
 	
 	result = list(db.Matchdetails(n,f,date))
-	return render_template('statMatch.html',res = result)
+	
+	print(len(result))
+	return render_template('statMatch.html',res = result[0])
 	
 	
 
 	
-@app.route('/tableMatch/')
-def  tableMatch():
-	teams = (list(db.findAllTeams()))
-	res = (list(db.getNumOfMatches()))
-	print(res)
+@app.route('/tableMatch/<arr>', methods=['GET'])
+def  tableMatch(arr):
+	post_data = (arr)
+	teams = post_data[4:].split(',')
+
+	#teams = (post_data['arr'])
 	
+	#print(type(teams))
+	
+	#print(teams)
+	#res = (list(db.getNumOfMatches(teams)))
+	res = (list(db.test(teams)))
+	#return redirect(url_for('tableMatch', teams = teams,res = res))
 	return render_template('tableMatch.html',teams = teams,res = res)
