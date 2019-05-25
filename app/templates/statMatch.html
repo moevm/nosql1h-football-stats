@@ -1,0 +1,72 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+
+	<div class = "block-compare">
+		<div>
+		
+			<div>ress</div>
+			<input placeholder = "{{ res.HomeTeam }}" readonly></input>
+			<input placeholder = "{{ res.AwayTeam }}" readonly></input>
+			
+
+			
+			<div>Referee</div>
+			<input placeholder = "{{ res.Referee}}" readonly></input>
+			<input style = "opacity:0">
+			<div>Goal for:</div>
+			<input placeholder = "{{ res.FTHG }}" readonly></input>
+			<input placeholder = "{{ res.FTAG }}" readonly></input>
+
+			
+			<div>Goal against</div>
+			<input placeholder = "{{ res.HTHG  }}" readonly></input>
+			<input placeholder = "{{ res.HTAG }}" readonly></input>
+
+			
+			<div>Shots</div>
+			<input placeholder = "{{ res.HS }}" readonly></input>
+			<input placeholder = "{{ res.AS }}" readonly></input>
+
+			
+			<div>Shots on Target</div>
+			<input placeholder = "{{ res.HST }}" readonly></input>
+			<input placeholder = "{{ res.AST }}" readonly></input>
+
+			
+			<div>Fouls</div>
+			<input placeholder = "{{ res.AF }}" readonly></input>
+			<input placeholder = "{{ res.HF }}" readonly></input>
+
+			
+			<div>Corners</div>
+			<input placeholder = "{{ res.HC }}" readonly></input>
+			<input placeholder = "{{ res.AC }}" readonly></input>
+
+			
+			<div>Yellow Cards</div>
+			<input placeholder = "{{ res.HY }}" readonly></input>
+			<input placeholder = "{{ res.AY }}" readonly></input>
+
+			
+			<div>Red Cards</div>
+			<input placeholder = "{{ res.HR }}" readonly></input>
+			<input placeholder = "{{ res.AR }}" readonly></input>
+
+		</div>
+	</div>
+	<div class = "block-canvas-c">
+		<script>
+			var name1= "{{ res.HomeTeam }}";
+			var name2= "{{ res.AwayTeam }}";
+			
+		
+			var Team1Arr = [{{res.FTHG}},{{res.HTHG}},{{res.HS}},{{res.HST}},{{res.AF}},{{res.HC}},{{res.HY }},{{res.HR }}];
+			var Team2Arr = [{{res.FTAG}},{{res.HTAG}},{{res.AS}},{{ res.AST}},{{res.HF}},{{res.AC}},{{ res.AY}},{{ res.AR}}];
+			var Label = ["Goal for","Goal against","Shots","Shots on Target","Fouls","Corners","Yellow Cards","Red Cards"];
+		</script>
+	
+		<canvas id = "myChart" height = "500" width = "500">
+	</div>
+{% endblock %}

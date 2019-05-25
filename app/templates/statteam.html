@@ -1,0 +1,47 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+
+	<div class = "block-team-stat">
+
+			<div>
+				<div class = "left-menu">
+					<input type = "text" readonly placeholder = "{{ teamname }}">
+					<p>Number of mathces</p>
+					<p>Number of wins</p>
+					<p>Number of draws</p>
+					<p>Number of losses</p>
+					<p>Goal for</p>
+					<p>Goal against</p>
+					<p>Shots</p>
+					<p>Shots on Target</p>
+					<p>Fouls</p>
+					<p>Corners</p>
+					<p>Yellow cards</p>
+					<p>Red Cards</p>
+				</div>
+				<div class = "right-menu">
+					<p>Team's statisctic</p>
+
+					<input type = "text" readonly placeholder = "{{ stat.Matches }}">
+					<input type = "text" readonly placeholder = "{{ stat.Win }}">
+					<input type = "text" readonly placeholder = "{{ stat.Draw }}">
+					<input type = "text" readonly placeholder = "{{ stat.Loss }}">
+					<input type = "text" readonly placeholder = "{{ stat.FTHG + stat.FTAG }}">
+					<input type = "text" readonly placeholder = "{{ stat.HTHG + stat.HTAG }}">
+					<input type = "text" readonly placeholder = "{{ stat.HS + stat.AS }}">
+					<input type = "text" readonly placeholder = "{{ stat.HST + stat.AST }}">
+					<input type = "text" readonly placeholder = "{{ stat.AF + stat.HF }}">
+					<input type = "text" readonly placeholder = "{{ stat.HC + stat.AC }}">
+					<input type = "text" readonly placeholder = "{{ stat.HY + stat.AY }}">
+					<input type = "text" readonly placeholder = "{{ stat.HR + stat.AR }}">
+				</div>
+				
+
+		</div>
+		
+		
+	</div>
+<div class = "block-grafic"></div>
+{% endblock %}

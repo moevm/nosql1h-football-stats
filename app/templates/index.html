@@ -1,0 +1,139 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+			<div class = "block-model" id = "model-import">
+				<div class = "animated fadeInDown">
+					<div class = "model-title">
+						<span>Import json</span>
+					</div>
+					<div class = "model-main">
+						
+						<input type = "file" id = "linkImport">
+					</div>
+					<div class = "model-navigation">
+						
+						<button class = "close">close</button>
+						<button class = "send">ok</button>
+					</div>
+				</div>
+			</div>
+			<div class = "block-model" id = "model-compare">
+				<div class = "animated fadeInDown">
+					<div class = "model-title">
+						<span>Compare two teams</span>
+					</div>
+					<div class = "model-main">
+						<input type = "text" placeholder = "Name Team" id = "team1">
+						<input type = "text" placeholder = "Name Team" id = "team2">
+					</div>
+					<div class = "model-navigation">
+						
+						<button class = "close">close</button>
+						<button class = "send">ok</button>
+					</div>
+				</div>
+			</div>
+			
+			<div class = "block-model" id = "model-stat-team">
+				<div class = "animated fadeInDown">
+					<div class = "model-title">
+						<span>Team's statistic</span>
+					</div>
+					<div class = "model-main">
+						<input type = "text" placeholder = "Team name" id = "team-name-stat">
+					</div>
+					<div class = "model-navigation">
+						
+						<button class = "close">close</button>
+						<button class = "send">ok</button>
+					</div>
+				</div>
+			</div>
+			
+			<div class = "block-model" id = "model-table-teams">
+				<div class = "animated fadeInDown">
+					<div class = "model-title">
+						<span>Table teams</span>
+					</div>
+					<div class = "model-main">
+						<button class = "Add-Select-team">Add Team</button>
+					</div>
+					
+					<div class = "model-navigation">
+						<button class = "close">close</button>
+						<button class = "send">ok</button>
+					</div>
+				</div>
+			</div>
+			
+			<div class = "block-import-export">
+				<div class = "block-import">
+					<div id = "import" class = "button">
+						<img src = "{{ url_for('static', filename = 'img/ico/import.svg')}}">
+						<span>import</span>
+					</div>
+				</div>
+				
+				<div class = "block-export">
+					<div id = "export" class = "button">
+						<img src = "{{ url_for('static', filename = 'img/ico/export.svg')}}">
+						<span>export</span>
+						<a id="download_link"  href="" download="full.json"></a>
+						
+						
+						
+					</div>
+				</div>
+			</div>
+				
+			<div class = "block-main">
+				<div class = "title">
+					<p class = "title">Football</p>
+					<p class = "text">Find the match, check static of a team or compare two teams.</p>
+				</div>
+				
+				<div class = "navigation">
+					<div>
+						<img src = "{{ url_for('static', filename = 'img/ico/find.svg')}}">
+						<span>find the match</span>
+						<a href = "/findmatch"></a>
+					</div>
+					<div>
+						<img src = "{{ url_for('static', filename = 'img/ico/vs.svg')}}">
+						<span>Compare 2 teams</span>
+						<a href = "#" id = "compare-main"></a>
+					</div>
+					<div>
+						<img src = "{{ url_for('static', filename = 'img/ico/statistics.svg')}}">
+						<span>Statistics team</span>
+						<a href = "#" id = "stat-team-main"></a>
+					</div>
+					<div>
+						<img src = "{{ url_for('static', filename = 'img/ico/population.svg')}}">
+						<span>teams</span>
+						<a href = "/teams"></a>
+					</div>
+					<div>
+						<img src = "{{ url_for('static', filename = 'img/ico/table.svg')}}">
+						<span>tableMatch</span>
+						<a href = "#" id = "table-teams-s"></a>
+					</div>
+				</div>
+			</div>
+			
+			<div class = "block-background-main absolute">
+				<div>
+					<img src = "{{ url_for('static', filename = 'img/photo/1.png')}}">
+				</div>
+				<div>
+					<img src = "{{ url_for('static', filename = 'img/photo/2.png')}}">
+				</div>
+				<div>
+					<img src = "{{ url_for('static', filename = 'img/photo/1.png')}}">
+				</div>
+				<div>
+					<img src = "{{ url_for('static', filename = 'img/photo/2.png')}}">
+				</div>
+			</div>
+{% endblock %}

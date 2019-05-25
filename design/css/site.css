@@ -1,0 +1,25 @@
+body
+{
+	margin:0;
+}
+.button
+{
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	
+}
+button
+{
+	outline:none;
+	cursor:pointer;
+}
+p
+{
+	margin:0;
+	padding:0;
+}
+.absolute
+{
+	position:absolute;
+}

@@ -1,0 +1,64 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+	<style>
+		.block-tableMatch{
+			margin: auto;
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			height: 80%;
+			width: 80%;
+			box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)!important;
+			background-color: white;
+			border-radius:23px;
+			overflow: scroll;
+			width: max-content
+		}
+		.b{position:relative;height:40px;width:100px;float:left;display:flex;align-items:center;justify-content:center;}
+		.p{height:40px;overflow:auto;}
+		.b>a
+		{
+			position:absolute;
+			left:0;
+			top:0;
+			margin:auto;
+			height:40px;
+			width:100px;
+			z-index:999;
+		}
+	</style>
+	<div class = "block-tableMatch">
+		<div class = "p">
+			<div class = "b">X</div>
+		
+			{% for team in teams %}
+				<div class = "b"><b>{{ team }}</b></div>
+			{% endfor %}
+		</div>
+		
+			{% for team in teams %}
+				<div class = "p">
+					<div class = "b"><b>{{team}}</b></div>
+					
+					
+					{% for team1 in teams %}
+						<div class = "b" name ="{{team}}-{{team1}}">
+							
+							<a href = "/compare/f={{team}}&s={{team1}}"></a>
+						</div>
+					{% endfor %}
+					</br>
+				</div>	
+			{% endfor %}
+		<script type="text/javascript" src="{{ url_for('static', filename = 'js/table.js') }}"></script>	
+		<script>
+			console.log({{res | tojson}})
+			tableMatch({{res | tojson}});
+		</script>
+	</div>
+	
+{% endblock %}

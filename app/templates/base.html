@@ -1,0 +1,48 @@
+<html>
+    <head>
+		
+		<link rel="stylesheet" href="{{ url_for('static', filename = 'css/animate.min.css') }}">
+		
+		<!---->
+		<link rel = "stylesheet" href = "{{ url_for('static', filename = 'css/site.css') }}">
+	
+		<!------>
+		<!--index-->
+		<link rel = "stylesheet" href = "{{ url_for('static', filename = 'css/import-export.css') }}">
+		<link rel = "stylesheet" href = "{{ url_for('static', filename = 'css/main.css') }}">
+		<!------>
+		
+		<!------>
+		<!--teams-->
+		<link rel = "stylesheet" href = "{{ url_for('static', filename = 'css/teams.css') }}">
+		<!------>
+		
+		<link rel = "stylesheet" href = "{{ url_for('static', filename = 'css/model.css') }}">
+		
+		
+		<link rel = "stylesheet" href = "{{ url_for('static', filename = 'css/find-match.css') }}">
+		
+		<link rel = "stylesheet" href = "{{ url_for('static', filename = 'css/statteam.css') }}">
+		
+		<link rel = "stylesheet" href = "{{ url_for('static', filename = 'css/compare.css') }}">
+		
+		
+		
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		
+		<!--JS-->
+		<script type="text/javascript" src ="{{ url_for('static', filename = 'js/jquery.min.js') }}"></script>
+		<script type="text/javascript" src="{{ url_for('static', filename = 'js/main.js') }}"></script>
+		
+		<script type="text/javascript" src="{{ url_for('static', filename = 'js/findmatch.js') }}"></script>
+		
+		<script type="text/javascript" src="{{ url_for('static', filename = 'js/Chart.bundle.js') }}"></script>
+		<script type="text/javascript" src="{{ url_for('static', filename = 'js/cc.js') }}"></script>
+    </head>
+    <body>
+        
+        {% block content %}{% endblock %}
+    </body>
+</html>

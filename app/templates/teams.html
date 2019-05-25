@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+	
+		<div class = "block-title-teams">
+			<span>Football Teams</span>
+		</div>
+		<div class = "block-teams">
+			
+			<div>
+				{% for team in teams %}
+				<div>
+					<span>{{ team }}</span>
+					<a href = "/statteam/{{ team }}/"></a>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	
+{% endblock %}
